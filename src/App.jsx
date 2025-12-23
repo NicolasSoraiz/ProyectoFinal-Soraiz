@@ -1,12 +1,20 @@
-import Navbar from "./components/Navbar";
 import ItemsListContainer from "./components/ItemsListContainer";
+import NavbarContainer from "./components/NavbarContainer";
+import { BrowserRouter, Routes, Route } from "react-router";
+import CartContainer from "./components/CartContainer";
+import ProductDetailContainer from "./components/ProductDetailContainer";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <ItemsListContainer greeting="¡Bienvenido a Digital Market!"/>
-    </>
+    <BrowserRouter>
+      <NavbarContainer />
+      <Routes>
+        <Route path="/" element={<ItemsListContainer greeting="¡Bienvenido a Digital Market" />} />
+        <Route path="/cart" element={<CartContainer />} />
+        <Route path="/category/:category" element={<ItemsListContainer />} />
+        <Route path="/Product/:id" element={<ProductDetailContainer />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
