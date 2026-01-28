@@ -5,11 +5,11 @@ export const withLoading = (Component) => {
                 <p className="text-center text-white mt-10">
                     Cargando productos...
                 </p>
-            );
+            )
         }
 
-        return <Component {...props} />;
+        return <Component {...props} />
     }
 
-    return ComponentWithLoading;
-};
+    return ComponentWithLoading
+}
